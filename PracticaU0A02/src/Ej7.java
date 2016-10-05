@@ -1,23 +1,40 @@
 import java.util.*;
+
 public class Ej7 {
 	public static void main(String[]args){
-		Scanner sc = new Scanner(System.in);
-		int num;
-		int contador=2;
-		int operacion=2;
 		
-		System.out.println("INTRODUCE UN NUMERO:");
-		num = sc.nextInt();
+		Scanner sc = new Scanner(System.in);
+		
+		int num;
+		int factorial=1;
+		int cajon=0;
+		
+		System.out.println("INTRODUCE UN NUMERO: ");
+		num=sc.nextInt();
+		cajon=num;
 		
 		do{
-			operacion=operacion*contador;
-			contador++;
-		}while(contador<=num);
-		System.out.println("EL RESULTADO ES: "+operacion/2+"       (do while)");
+			factorial=factorial*num;
+			num--;
+		}while(num!=0);
+		System.out.println(factorial+" -> (do while)");
 		
-		operacion=2;
-		for(int i=2;i<=num;i++){
-			
+		num=cajon;
+		factorial=1;
+		
+		while(num!=0){
+			factorial=factorial*num;
+			num--;
 		}
+		System.out.println(factorial+" -> (while)");
+		
+		num=cajon;
+		factorial=1;
+		
+		for(int i=num;i>0;i--){
+			factorial=factorial*num;
+			num--;
+		}
+		System.out.println(factorial+" -> (for)");
 	}
 }
