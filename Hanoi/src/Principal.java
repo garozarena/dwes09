@@ -3,8 +3,10 @@ public class Principal {
 	public static void main(String[]args){
 		
 		Scanner sc=new Scanner(System.in);
-		int opcion=1;
-		PartidaHanoi partida;
+		int opcion=1, opcionPartida=1;
+		PartidaHanoi partida = null;
+		int posteOrigen=0;
+		int posteDestino=0;
 		
 		do{
 			System.out.println("***********************");
@@ -22,6 +24,23 @@ public class Principal {
 				System.out.println("Introduce el número de discos: ");
 				partida=new PartidaHanoi(sc.nextInt());
 			}
+			do{
+				System.out.println("¿Que deseas hacer?");
+				System.out.println("");
+				System.out.println("1- Realizar un movimiento");
+				System.out.println("2- Abandonar la partida");
+				System.out.print("Número de poste de origen(0-2): ");
+				posteOrigen=sc.nextInt();
+				System.out.println("Número de poste de destino(0-2): ");
+				posteDestino=sc.nextInt();
+				
+				partida.mover(posteOrigen, posteDestino);
+				
+				if(partida.haTerminado()==true){
+					System.out.println("Enhorabuena, lo has conseguido");
+				}
+				
+			}while(opcionPartida!=2 && partida.haTerminado()==false);
 			
 		}while(opcion!=2);
 	}
