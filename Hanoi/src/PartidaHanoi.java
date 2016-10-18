@@ -25,12 +25,14 @@ public class PartidaHanoi {
 		for (int i = 1; i <= this.discosPartida; i++) {
 			disco = new Disco(i * 2 + 1);
 			poste1.insertarDiscoPrimero(disco);
-			System.out.println("Creados el disco " + disco.getDiametro());
 		}
 
 		partida.add(poste1);
 		partida.add(poste2);
 		partida.add(poste3);
+		
+
+		this.dibujar();
 
 	}
 
