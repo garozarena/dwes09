@@ -6,9 +6,9 @@ public class PartidaHanoi {
 	
 	public PartidaHanoi(int discos){
 		
-		if(discos<1){
+		if(discos<1 && discos>9){
 			this.discosPartida=1;
-			System.out.println("ERROR: la partida debe tener al menos un disco.");
+			System.out.println("ERROR: la partida debe tener 1 o mas discos y 9 o menos discos.");
 		}else{this.discosPartida=discos;}
 		
 		this.partida = new ArrayList<Poste>();
@@ -56,8 +56,8 @@ public class PartidaHanoi {
 	
 	public void dibujar(){
 		for(int i=0;i<3;i++){
-			System.out.println("Poste "+i);
-			partida.get(i).dibujar();
+			System.out.println("\n"+"POSTE "+i+"\n");
+			partida.get(i).dibujar(discosPartida);
 		}
 	}
 }

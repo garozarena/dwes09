@@ -18,18 +18,18 @@ public class Principal {
 			System.out.println("1- Nueva partida");
 			System.out.println("2- Salir del programa");
 			System.out.println("***********************");
-			opcion=1;//sc.nextInt();
+			opcion=sc.nextInt();
 			
 			if(opcion==1){
 				System.out.println("Introduce el número de discos: ");
-				partida=new PartidaHanoi(3);//sc.nextInt());
+				partida=new PartidaHanoi(sc.nextInt());
 			}
 			while(opcionPartida!=2 && partida.haTerminado()==false){
 				System.out.println("¿Que deseas hacer?");
 				System.out.println("");
 				System.out.println("1- Realizar un movimiento");
 				System.out.println("2- Abandonar la partida");
-				opcionPartida=1;//sc.nextInt();
+				opcionPartida=sc.nextInt();
 				if(opcionPartida==1){
 					System.out.print("Número de poste de origen(0-2): ");
 					posteOrigen=sc.nextInt();
@@ -45,7 +45,5 @@ public class Principal {
 				}
 				
 			}
-			
-		//}while(opcion!=2);
 	}
 }

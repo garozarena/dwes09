@@ -52,15 +52,20 @@ public class Poste {
 		return result;
 	}
 	
-	public void dibujar(){
-		if(esVacio()==true){System.out.println("=========");
-		}else{
-			for(int i=0;i<discos.size();i++){
-					discos.get(i).dibujar();
-					System.out.print("\n");
-			}
-			System.out.println("=========");
+	public void dibujar(int numDiscos){
+		int tamañoPoste=discos.size();
+		if(discos.isEmpty()==true){tamañoPoste=0;}
+		int discosVacios=numDiscos-tamañoPoste;
+		
+		for(int j=0;j<discosVacios;j++){
+			System.out.println("    |");
 		}
+		for(int i=0;i<discos.size();i++){
+				discos.get(i).dibujar();
+				System.out.print("\n");
+		}
+		System.out.println("=========");
+		
 	}
 	
 	
