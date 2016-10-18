@@ -8,7 +8,7 @@ public class Principal {
 		int posteOrigen=0;
 		int posteDestino=0;
 		
-		do{
+		//do{
 			System.out.println("***********************");
 			System.out.println("*LAS TORRES DE HANOI*");
 			System.out.println("***********************");
@@ -18,30 +18,34 @@ public class Principal {
 			System.out.println("1- Nueva partida");
 			System.out.println("2- Salir del programa");
 			System.out.println("***********************");
-			opcion=sc.nextInt();
+			opcion=1;//sc.nextInt();
 			
 			if(opcion==1){
 				System.out.println("Introduce el número de discos: ");
-				partida=new PartidaHanoi(sc.nextInt());
+				partida=new PartidaHanoi(3);//sc.nextInt());
 			}
-			do{
+			while(opcionPartida!=2 && partida.haTerminado()==false){
 				System.out.println("¿Que deseas hacer?");
 				System.out.println("");
 				System.out.println("1- Realizar un movimiento");
 				System.out.println("2- Abandonar la partida");
-				System.out.print("Número de poste de origen(0-2): ");
-				posteOrigen=sc.nextInt();
-				System.out.println("Número de poste de destino(0-2): ");
-				posteDestino=sc.nextInt();
-				
-				partida.mover(posteOrigen, posteDestino);
-				
-				if(partida.haTerminado()==true){
-					System.out.println("Enhorabuena, lo has conseguido");
+				opcionPartida=1;//sc.nextInt();
+				if(opcionPartida==1){
+					System.out.print("Número de poste de origen(0-2): ");
+					posteOrigen=sc.nextInt();
+					System.out.println("Número de poste de destino(0-2): ");
+					posteDestino=sc.nextInt();
+					
+					partida.mover(posteOrigen, posteDestino);
+					partida.dibujar();
+					
+					if(partida.haTerminado()==true){
+						System.out.println("Enhorabuena, lo has conseguido");
+					}else{opcionPartida=1;}
 				}
 				
-			}while(opcionPartida!=2 && partida.haTerminado()==false);
+			}
 			
-		}while(opcion!=2);
+		//}while(opcion!=2);
 	}
 }

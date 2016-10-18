@@ -3,8 +3,8 @@ public class Poste {
 
 	ArrayList<Disco> discos;
 	
-	public Poste(){
-		discos = new ArrayList<Disco>();
+	public Poste(int discosPartida){
+		discos = new ArrayList<Disco>(discosPartida);
 	}
 	
 	public boolean esVacio(){
@@ -26,24 +26,38 @@ public class Poste {
 	
 	public void insertarDisco(Disco disco){
 		
-		discos.add(disco);
+		discos.add(0, disco);
 		
+	}
+	
+	public void insertarDiscoPrimero(Disco disco){
+		discos.add(disco);
 	}
 	
 	public Disco extraerDisco(){
 		
+		Disco result = new Disco(0);
+		
 		if(esVacio()==true){
 			return null;
 		}
-		return discos.get(discos.size()-1);
+		for(int i=0;i<discos.size();i++){
+			if(discos.get(i)!=null){
+				result = discos.get(i);
+				discos.remove(i);
+				break;
+			}
+		}
+		
+		return result;
 	}
 	
 	public void dibujar(){
-		if(esVacio()==true){System.out.println("=====");
+		if(esVacio()==true){System.out.println("=========");
 		}else{
 			for(int i=0;i<discos.size();i++){
-				discos.get(i).dibujar();
-				System.out.print("\n");
+					discos.get(i).dibujar();
+					System.out.print("\n");
 			}
 			System.out.println("=========");
 		}

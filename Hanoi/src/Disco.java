@@ -25,7 +25,10 @@ public class Disco {
 	}
 	
 	public void dibujar(){
-		for(int i=0;i<diametro;i++){System.out.print("o");}
+		for(int i=0;i<diametro;i++){
+				System.out.print("o");
+			
+		}
 	}
 	
 }
