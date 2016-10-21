@@ -122,7 +122,7 @@
 	
 	$cadena = "hola mundo";
 	$longCadena = strlen($cadena);
-	echo "$cadena tiene $longCadena caracteres"
+	echo "$cadena tiene $longCadena caracteres";
 	echo ucwords($cadena);
 	echo "<br>";
 	echo substr($cadena, 2, 5);
