@@ -93,22 +93,40 @@
 	echo "<h3>ACTIVIDAD 6</h3>";
 	echo "<br>";
 	$num5=5.55;
-	$isdouble=false;
-	if(is_double($num5)==true){
-		echo "$num5 es de tipo double.";
+	$positivo=false;
+	
+	if($num5>0){
+		$positivo = true;
 	}
+	if($positivo==true){
+		echo "$num5 es positivo";
+	}
+	
 	echo "<br>";
 	
 //* Uso de is_numeric, is_boolean y is_double con estas variables
 
 	echo "<h3>ACTIVIDAD 7</h3>";
 	echo "<br>";
+	if(is_numeric($num5)==true){echo "$num5 es un numero";}
+	echo "<br>";
+	if(is_double($num5)==true){echo "$num5 es de tipo double.";}
+	echo "<br>";
+	if(is_bool($positivo)==true){echo 'la variable $positivo es de tipo booleano';}
 	
 	echo "<br>";
 //* Declaración de una variable de tipo string. Pruebas con la función *strlen*
 //y con tres de las funciones indicadas en el enlace.
 	echo "<h3>ACTIVIDAD 8</h3>";
 	echo "<br>";
+	
+	$cadena = "hola mundo";
+	$longCadena = strlen($cadena);
+	echo "$cadena tiene $longCadena caracteres"
+	echo ucwords($cadena);
+	echo "<br>";
+	echo substr($cadena, 2, 5);
+	
 	
 	echo "<br>";
 //* Declaración de un array escalar y uno asociativo
