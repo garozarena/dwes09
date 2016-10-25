@@ -271,20 +271,22 @@
 		echo "Marca: $marca";
 		echo "<br>";
 	}
+	echo "<br>";
 	
 	ksort($MarcasVehiculosAsociativo);
-	
 	foreach($MarcasVehiculosAsociativo as $marca2){
 		echo "Marca: $marca2";
 		echo "<br>";
 	}
 	
 	echo "<br>";
+	
 //* Dos pruebas con la variable superglobal _SERVER
 	echo "<h3>ACTIVIDAD 13</h3>";
 	echo "<br>";
 	
-	
+	echo $_SERVER['REMOTE_ADDR'];
+	echo $_SERVER['SERVER_NAME'];
 	
 	echo "<br>";
 //* Dos pruebas de funciones: una devolverá algun tipo, la otra noecho "<h3>ACTIVIDAD 11</h3>";
