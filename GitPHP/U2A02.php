@@ -123,10 +123,12 @@
 	$cadena = "hola mundo";
 	$longCadena = strlen($cadena);
 	echo "$cadena tiene $longCadena caracteres";
+	echo "<br>";
+	echo "funcion ucwords: ";
 	echo ucwords($cadena);
 	echo "<br>";
+	echo "funcion substring: ";
 	echo substr($cadena, 2, 5);
-	
 	
 	echo "<br>";
 //* Declaración de un array escalar y uno asociativo
@@ -134,13 +136,39 @@
 	echo "<h3>ACTIVIDAD 9</h3>";
 	echo "<br>";
 	
+	$MarcasVehiculosEscalar = array('seat', 'orbea', 'yamaha', 'mercedes');
+	
+	echo 'Generado el array $MarcasVehiculosEscalar';
 	echo "<br>";
+	
+	$MarcasVehiculosAsociativo = array(
+			'coche1' => 'audi',
+			'bici' => 'orbea',
+			'moto' => 'yamaha',
+			'coche2' => 'mercedes'
+	);
+	
+	echo 'Generado el array $MarcasVehiculosAsociativo';
+	echo "<br>";
+	
+	echo "<br>";
+	
 //* Ordenación y volcado de información con *var_dump* siguiendo 
 //dos criterios de ordenación en cada uno de los arrays
 
 	echo "<h3>ACTIVIDAD 10</h3>";
 	echo "<br>";
 	
+	echo "Orden alfabético por valores: ";
+	asort($MarcasVehiculosEscalar);
+	var_dump($MarcasVehiculosEscalar);
+	echo "<br>";
+			
+	echo "Orden alfabético por claves: ";
+	
+	ksort($MarcasVehiculosAsociativo);
+	var_dump($MarcasVehiculosAsociativo);
+			
 	echo "<br>";
 	
 //* Una estructura de control de cada tipo (if-elsif-else, switch, while, do-while, for)
@@ -148,13 +176,138 @@
 	echo "<h3>ACTIVIDAD 11</h3>";
 	echo "<br>";
 	
+	$num6=7;
+	
+	echo "ESTRUCTURA IF ELSEIF ELSE:";
+	echo "<br>";
+	if($num6<0){echo "El numero es negativo";}
+	elseif($num6%2==0){echo "El numero es par";}
+	else{echo "El numero es impar";}
+	echo "<br>";
 	echo "<br>";
 	
-//* Un recorrido por cada uno de los dos arrays utilizando foreach, generando por ejemplo una lista ordenada con sus elementos
+	echo "ESTRUCTURA SWITCH:";
+	echo "<br>";
+	
+	switch ($num6) {
+		case 1 :
+			echo "El numero es 1";
+			break;
+		case 2 :
+			echo "El numero es 2";
+			break;
+		case 3 :
+			echo "El numero es 3";
+			break;
+		case 4 :
+			echo "El numero es 4";
+			break;
+		case 5 :
+			echo "El numero es 5";
+			break;
+		case 6 :
+			echo "El numero es 6";
+			break;
+		case 7 :
+			echo "El numero es 7";
+			break;
+		case 8 :
+			echo "El numero es 8";
+			break;
+		case 9 :
+			echo "El numero es 9";
+			break;
+		case 0 :
+			echo "El numero es 0";
+			break;
+		default :
+			echo "El numero esta fuera de rango";
+			break;
+	}
+	echo "<br>";
+	echo "<br>";
+	
+	echo "ESTRUCTURA WHILE";
+	echo "<br>";
+	
+	$i=0;
+	while($i<$num6){
+		echo "este es el ciclo $i de un while";
+		echo "<br>";
+		$i++;
+	}
+	
+	echo "<br>";
+	
+	echo "ESTRUCTURA DO-WHILE:";
+	echo "<br>";
+	$k=0;
+	do{
+		echo "este es el ciclo $k de un do-while";
+		$k++;
+		echo "<br>";
+	}while($k<$num6);
+	
+	echo "<br>";
+	
+	echo "ESTRUCTURA FOR: ";
+	echo "<br>";
+	
+	for($j=0;$j<$num6;$j++){
+		echo "este es el ciclo $j de un for";
+		echo "<br>";
+	}
+	
+	
+	echo "<br>";
+	
+//* Un recorrido por cada uno de los dos arrays utilizando foreach, 
+//generando por ejemplo una lista ordenada con sus elementos
+	echo "<h3>ACTIVIDAD 12</h3>";
+	echo "<br>";
+	
+	asort($MarcasVehiculosEscalar);
+	foreach($MarcasVehiculosEscalar as $marca){
+		echo "Marca: $marca";
+		echo "<br>";
+	}
+	
+	ksort($MarcasVehiculosAsociativo);
+	
+	foreach($MarcasVehiculosAsociativo as $marca2){
+		echo "Marca: $marca2";
+		echo "<br>";
+	}
+	
+	echo "<br>";
 //* Dos pruebas con la variable superglobal _SERVER
-//* Dos pruebas de funciones: una devolverá algun tipo, la otra no
-//* Una función que utilice una variable global
-//* Un formulario que reciba datos y los muestre por pantalla 
+	echo "<h3>ACTIVIDAD 13</h3>";
+	echo "<br>";
+	
+	
+	
+	echo "<br>";
+//* Dos pruebas de funciones: una devolverá algun tipo, la otra noecho "<h3>ACTIVIDAD 11</h3>";
+	echo "<h3>ACTIVIDAD 14</h3>";
+	echo "<br>";
+	
+	
+	
+	echo "<br>";
+//* Una función que utilice una variable globalecho "<h3>ACTIVIDAD 11</h3>";
+	echo "<h3>ACTIVIDAD 15</h3>";
+	echo "<br>";
+	
+	
+	
+	echo "<br>";
+//* Un formulario que reciba datos y los muestre por pantalla echo "<h3>ACTIVIDAD 11</h3>";
+	echo "<h3>ACTIVIDAD 16</h3>";
+	echo "<br>";
+	
+	
+	
+	echo "<br>";
 
 	echo "<p>Examina el código fuente de esta página y compruébalo.</p>\n";
 // el código PHP queda oculto al usuario final
