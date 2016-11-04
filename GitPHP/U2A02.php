@@ -2,6 +2,12 @@
 // Codifica un programa PHP en el que incluyas ejemplos propios de los elementos que se van indicando. Incluye estos apartados antes de cada prueba en forma de comentario de lÃ­nea:
 
 //1. Comentarios de los tres tipos
+
+	//comentario de linea
+	/*comentario
+	 multilinea*/
+	#comentario tipo consola
+
 //* Sentencias echo con los dos tipos de comillas
 	
 	echo "<h3>ACTIVIDAD 1</h3>";
@@ -285,30 +291,76 @@
 	echo "<h3>ACTIVIDAD 13</h3>";
 	echo "<br>";
 	
-	echo $_SERVER['REMOTE_ADDR'];
+	echo "DOCUMENT_ROOT: ";
+	echo $_SERVER['DOCUMENT_ROOT'];
+	echo "<br>";
+	echo "SERVER_NAME: ";
 	echo $_SERVER['SERVER_NAME'];
 	
 	echo "<br>";
-//* Dos pruebas de funciones: una devolverá algun tipo, la otra noecho "<h3>ACTIVIDAD 11</h3>";
+//* Dos pruebas de funciones: una devolverá algun tipo, la otra no
 	echo "<h3>ACTIVIDAD 14</h3>";
 	echo "<br>";
 	
+	function printFuncion(){
+		return "esto es una función";
+	}
+	
+	/*function printTipo($num7): int{
+		return $num7;
+	}
+	
+	*/echo 'Primera función, no devuelve tipo: '.printFuncion();/*
+	echo '<br>Segunda función, devuelve si es tipo int: ';
+	echo printTipo(7)." es tipo int";*/
 	
 	
 	echo "<br>";
-//* Una función que utilice una variable globalecho "<h3>ACTIVIDAD 11</h3>";
+//* Una función que utilice una variable global
 	echo "<h3>ACTIVIDAD 15</h3>";
 	echo "<br>";
 	
 	
 	
+	function funcionGlobal(){
+		global $varGlobal;
+		return $varGlobal*2;
+	}
+	$varGlobal = 5;
+	echo 'esta funcion devuelve el doble de $varGlobal(5): '.funcionGlobal();
+	
 	echo "<br>";
-//* Un formulario que reciba datos y los muestre por pantalla echo "<h3>ACTIVIDAD 11</h3>";
+//* Un formulario que reciba datos y los muestre por pantalla
 	echo "<h3>ACTIVIDAD 16</h3>";
 	echo "<br>";
+
+	if(!isset($_POST['enviar'])){
+		?>
+		
+		<form action="U2A02.php" method="post">
+			Nombre y Apellidos: <br /><input type="text" name="nombre" /><br />
+			Edad: <br /><input type="text" size="3" maxlength="2" name="edad" /><br />
+			Sexo: <br />					<select name="sexo">
+	  				<option value="otro" selected="selected">Otro</option>
+	  				<option value="hombre">Hombre</option>
+					<option value="mujer">Mujer</option>
+				</select>
+			<br>
+			<input type="submit" name="enviar" value="Enviar"/>
+		</form>
+		<?php
 	
-	
-	
+	}else{
+		echo "Bienvenid@, estos son tus datos: <br>";
+		echo "<br>";
+		echo "nombre : ".$_POST["nombre"];
+		echo "<br>";
+		echo "edad : ".$_POST["edad"];
+		echo "<br>";
+		echo "sexo : ".$_POST["sexo"];
+		echo "<br>";
+	}
+		
 	echo "<br>";
 
 	echo "<p>Examina el código fuente de esta página y compruébalo.</p>\n";
