@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  
+  <!-- SERVLETS -->
+
+  <servlet>
+    <servlet-name>servletNumero</servlet-name>
+    <servlet-class>ServletNumero</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>servletFecha</servlet-name>
+    <servlet-class>ServletFecha</servlet-class>
+  </servlet>
+  
+  <!-- MAPPING -->
+  
+  
+  <servlet-mapping>
+    <servlet-name>servletNumero</servlet-name>
+    <url-pattern>/ServletNumero</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servletFecha</servlet-name>
+    <url-pattern>/ServletFecha</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- ERROR PAGE -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/errores/error404.html</location>
+  </error-page>
+</web-app>
