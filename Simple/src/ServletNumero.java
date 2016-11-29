@@ -10,10 +10,12 @@ public class ServletNumero extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    	double rdm = Math.random()*10;
+    	int rdmInt = (int)rdm;
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
         out.println("<html><head><title>EjemploServletHttp</title></head>");
-        out.println("<body><h1>Numero Random: "+(int) Math.floor(Math.random())+"</h1></body></html>");
+        out.println("<body><h1>Numero Random: "+rdmInt+"</h1></body></html>");
         out.close();
     }
 

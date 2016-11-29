@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   
-  <!-- SERVLETS -->
-
+  <display-name>Muestra Variables</display-name>
+  
+   <!-- PARAMETROS -->
+  
+  <context-param>
+  	<param-name>Asignatura</param-name>
+  	<param-value>DWES</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>Profesor</param-name>
+  	<param-value>Alberto</param-value>
+  </context-param>
+  	
+  	<!-- SERVLETS -->
+  
+  <servlet>
+  	<servlet-name>MuestraVariables</servlet-name>
+    <servlet-class>MuestraVariablesServidor</servlet-class>
+    <init-param>
+  			<param-name>Alumno</param-name>
+ 			<param-value>Guzmán</param-value>
+    </init-param>
+    <init-param>
+  			<param-name>Curso</param-name>
+ 			<param-value>2016-2017</param-value>
+    	</init-param>
+  </servlet>
   <servlet>
     <servlet-name>servletNumero</servlet-name>
     <servlet-class>ServletNumero</servlet-class>
@@ -12,8 +37,7 @@
     <servlet-class>ServletFecha</servlet-class>
   </servlet>
   
-  <!-- MAPPING -->
-  
+    <!-- MAPPING -->
   
   <servlet-mapping>
     <servlet-name>servletNumero</servlet-name>
@@ -23,9 +47,13 @@
     <servlet-name>servletFecha</servlet-name>
     <url-pattern>/ServletFecha</url-pattern>
   </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>MuestraVariables</servlet-name>
+    <url-pattern>/MuestraVariables</url-pattern>
+  </servlet-mapping>
   
+  	<!-- ERROR -->
   
-  <!-- ERROR PAGE -->
   <error-page>
     <error-code>404</error-code>
     <location>/errores/error404.html</location>
